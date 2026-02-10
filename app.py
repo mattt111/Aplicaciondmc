@@ -2,8 +2,7 @@ import streamlit as st
 
 if 'opcion' not in st.session_state:
     st.session_state.opcion = "Home"  #Para que comienze en Home siempre que se abra
-if st.sidebar.image("Logodedmc.png"):
- st.sidebar.write("Selecciona una opción:")
+    st.sidebar.write("Selecciona una opción:")
 
 Opcion = st.sidebar.selectbox(
     "Selecciona una opción:",
@@ -13,11 +12,6 @@ Opcion = st.sidebar.selectbox(
 # home
 
 if Opcion == "Home":
-    
-    col_logo, col_vacia = st.columns([2,1])
-    with col_logo:
-        st.image("Logodedmc.png", width=200)
-    
     # se crea 3 columnas para poder centrar la informacion
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
@@ -153,7 +147,7 @@ elif Opcion == "Ejercicio 3":
             st.markdown("Resultados Proyectados:")
 
  # Mostramos los resultados con la lista original de los calculos
- 
+
             for i, actividad in enumerate(st.session_state.lista_actividades):
                 nombre = actividad["Nombre"]
                 presupuesto_original = actividad["Presupuesto"]
@@ -169,7 +163,7 @@ elif Opcion == "Ejercicio 4":
 
     # Definimos las actividades
 
-    class Actividad:
+    class Nombreclase:
         def __init__(self, nombre, tipo, presupuesto, gasto_real):
             self.nombre = nombre
             self.tipo = tipo
@@ -195,7 +189,7 @@ elif Opcion == "Ejercicio 4":
         for datos in st.session_state.lista_actividades:
 
 
-            obj_actividad = Actividad(
+            obj_actividad = Nombreclase(
                 datos["Nombre"], 
                 datos["Tipo"], 
                 datos["Presupuesto"], 
